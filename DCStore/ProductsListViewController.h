@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <Moltin/Moltin.h>
+#import "ProductsCollectionViewCell.h"
+#import "ProductsModel.h"
 
-@interface ProductsListViewController : UIViewController
+@interface ProductsListViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
+
+@property (strong, nonatomic) UICollectionView *collectionView;
 - (instancetype)initWithCategoryId:(NSString *) catId;
+@property (strong, nonatomic) NSArray *propArray;
 
 @end

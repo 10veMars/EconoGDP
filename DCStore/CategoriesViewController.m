@@ -20,6 +20,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     self.title = @"Categories";
     
     self.collectionView.backgroundColor = [UIColor colorWithRed:22/255.0
@@ -77,7 +79,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSLog(@"%lu", (unsigned long)self.catArray.count);
         return self.catArray.count;
     
     
@@ -96,17 +97,8 @@ static NSString * const reuseIdentifier = @"Cell";
             NSDictionary *dict = [self.catArray objectAtIndex:indexPath.row];
             NSString *description = [dict objectForKey:@"title"];
             [cell setLabelTextWithString:description];
-            
-            NSDictionary *imageDict = [[dict objectForKey:@"images"] objectAtIndex:0];
-            
-            
-            NSDictionary *urlDict = [imageDict objectForKey:@"url"];
-            
-            
-            NSString *finalUrl = [urlDict valueForKey:@"https"];
+                        
             NSString *nextURL = [[dict valueForKeyPath:@"images.url.https"]objectAtIndex:0];
-            NSLog(@"%@", nextURL);
-            NSLog(@"%@", finalUrl);
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
                 
                 NSURL *url = [NSURL URLWithString:nextURL];
@@ -141,12 +133,16 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     NSDictionary *dict = [self.catArray objectAtIndex:indexPath.row];
-    
-    
+    NSLog(@"%@", [dict objectForKey:@"title"]);
+    NSString *title = [dict objectForKey:@"title"];
     NSString *catID = [dict objectForKey:@"id"];
     if (catID) {
+        
         ProductsListViewController *productsVC = [[ProductsListViewController alloc]initWithCategoryId:catID];
         [self.navigationController pushViewController:productsVC animated:YES];
+        if (title) {
+            productsVC.title = title;
+        }
     }
     
     

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		546894C7561A3BD861290CC7 /* libPods-DCStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8B6D8E9E8C7E6BBCC152D5 /* libPods-DCStore.a */; };
+		9015DA791DF728E9001CD56C /* ProductsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9015DA771DF728E9001CD56C /* ProductsCollectionViewCell.m */; };
+		9015DA7A1DF728E9001CD56C /* ProductsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9015DA781DF728E9001CD56C /* ProductsCollectionViewCell.xib */; };
+		9015DA7F1DF736B1001CD56C /* ProductsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9015DA7E1DF736B1001CD56C /* ProductsModel.m */; };
 		90B02AEC1DF6506A0066EA3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B02AEB1DF6506A0066EA3E /* main.m */; };
 		90B02AEF1DF6506A0066EA3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B02AEE1DF6506A0066EA3E /* AppDelegate.m */; };
 		90B02AF21DF6506A0066EA3E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B02AF11DF6506A0066EA3E /* ViewController.m */; };
@@ -48,6 +51,11 @@
 		6F8994A607E0C49C410A32F4 /* Pods-DCStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DCStore/Pods-DCStore.debug.xcconfig"; sourceTree = "<group>"; };
 		854F225E13EE3A99E9B752EA /* Pods-DCStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCStoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DCStoreTests/Pods-DCStoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D9D2105A345FFA4EA96723F /* Pods-DCStoreUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCStoreUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DCStoreUITests/Pods-DCStoreUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9015DA761DF728E9001CD56C /* ProductsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsCollectionViewCell.h; sourceTree = "<group>"; };
+		9015DA771DF728E9001CD56C /* ProductsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsCollectionViewCell.m; sourceTree = "<group>"; };
+		9015DA781DF728E9001CD56C /* ProductsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductsCollectionViewCell.xib; sourceTree = "<group>"; };
+		9015DA7D1DF736B1001CD56C /* ProductsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsModel.h; sourceTree = "<group>"; };
+		9015DA7E1DF736B1001CD56C /* ProductsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsModel.m; sourceTree = "<group>"; };
 		90B02AE71DF6506A0066EA3E /* DCStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B02AEB1DF6506A0066EA3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		90B02AED1DF6506A0066EA3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +117,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9015DA7B1DF728F7001CD56C /* ProductsCell */ = {
+			isa = PBXGroup;
+			children = (
+				9015DA761DF728E9001CD56C /* ProductsCollectionViewCell.h */,
+				9015DA771DF728E9001CD56C /* ProductsCollectionViewCell.m */,
+				9015DA781DF728E9001CD56C /* ProductsCollectionViewCell.xib */,
+			);
+			name = ProductsCell;
+			sourceTree = "<group>";
+		};
+		9015DA7C1DF73688001CD56C /* ProductsModel */ = {
+			isa = PBXGroup;
+			children = (
+				9015DA7D1DF736B1001CD56C /* ProductsModel.h */,
+				9015DA7E1DF736B1001CD56C /* ProductsModel.m */,
+			);
+			name = ProductsModel;
+			sourceTree = "<group>";
+		};
 		90B02ADE1DF6506A0066EA3E = {
 			isa = PBXGroup;
 			children = (
@@ -225,8 +252,10 @@
 		90B02B301DF69A190066EA3E /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				9015DA7C1DF73688001CD56C /* ProductsModel */,
 				90B02B311DF69AC70066EA3E /* ProductsListViewController.h */,
 				90B02B321DF69AC70066EA3E /* ProductsListViewController.m */,
+				9015DA7B1DF728F7001CD56C /* ProductsCell */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -374,6 +403,7 @@
 			files = (
 				90B02AFD1DF6506A0066EA3E /* LaunchScreen.storyboard in Resources */,
 				90B02AFA1DF6506A0066EA3E /* Assets.xcassets in Resources */,
+				9015DA7A1DF728E9001CD56C /* ProductsCollectionViewCell.xib in Resources */,
 				90B02B2B1DF675C50066EA3E /* CollectionViewCell.xib in Resources */,
 				90B02AF51DF6506A0066EA3E /* Main.storyboard in Resources */,
 			);
@@ -546,6 +576,8 @@
 				90B02B231DF670D00066EA3E /* CategoriesViewController.m in Sources */,
 				90B02B331DF69AC70066EA3E /* ProductsListViewController.m in Sources */,
 				90B02AEC1DF6506A0066EA3E /* main.m in Sources */,
+				9015DA791DF728E9001CD56C /* ProductsCollectionViewCell.m in Sources */,
+				9015DA7F1DF736B1001CD56C /* ProductsModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

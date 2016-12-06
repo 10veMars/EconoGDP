@@ -13,49 +13,142 @@
 @end
 
 @implementation ProductsListViewController
+
+static NSString * const cellReuseIdentifier = @"cell";
+
 -(instancetype)initWithCategoryId:(NSString *)catId {
     self = [super init];
     if (self) {
         
-        //NSLog(@"INIT ID: %@", catId);
-        [self loadProductsWithCategoryId:catId];
+
         
+        __weak ProductsListViewController *weakSelf = self;
+        
+        self.propArray = [[NSArray alloc]init];
+        ProductsModel *prodModel = [[ProductsModel alloc] init];
+        [prodModel getAllProductsWithCategoryId:catId :^(NSArray *parsedData) {
+            if (parsedData) {
+                
+                weakSelf.propArray = parsedData;
+                [self.collectionView reloadData];
+                //NSDictionary *dict = [weakSelf.propArray objectAtIndex:0];
+                //self.title = [dict valueForKeyPath:@"category.value"];
+                
+            }
+            
+        }];
     }
+    
     return self;
+    
 }
 
-- (void)loadProductsWithCategoryId:(NSString *)catId {
-    
-    [[Moltin sharedInstance].product listingWithParameters:@{@"category" : catId
-                                                             } success:^(NSDictionary *response) {
-                                                                 
-                                                                 NSLog(@"%@", response);
-                                                                 
-                                                             } failure:^(NSDictionary *response, NSError *error) {
-                                                                 
-                                                                 
-                                                             }];
-    
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:flowLayout];
+    [_collectionView setDelegate:self];
+    [_collectionView setDataSource:self];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"ProductsCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:cellReuseIdentifier];
+    [self.view addSubview:self.collectionView];
+    
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    
 }
 
-/*
-#pragma mark - Navigation
+//- (void)loadProductsWithCategoryId:(NSString *)catId {
+//    
+//    [[Moltin sharedInstance].product listingWithParameters:@{@"category" : catId
+//                                                             } success:^(NSDictionary *response) {
+//                                                                 NSArray *products =[response objectForKey:@"result"];
+////                                                                 for (NSDictionary *product in products) {
+////                                                                     NSLog(@"%@", [product objectForKey:@"description"]);
+////                                                                 }
+//                                                                 
+//                                                                 
+//                                                             } failure:^(NSDictionary *response, NSError *error) {
+//                                                                 
+//                                                                 
+//                                                             }];
+//    
+//}
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    
+    return self.propArray.count;
+    
+    
 }
-*/
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+    ProductsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellReuseIdentifier forIndexPath:indexPath];
+   
+    NSDictionary *dict = [self.propArray objectAtIndex:indexPath.row];
+    //NSLog(@"%@", [dict objectForKey:@"title"]);
+    NSString *title = [dict objectForKey:@"title"];
+    NSString *price = [dict valueForKeyPath:@"price.value"];
+   // NSLog(@"%@", price);
+    NSArray *imageArr = [dict objectForKey:@"images"];
+    NSDictionary *imageDict;
+    
+    if (imageArr) {
+        
+        imageDict = [[dict objectForKey:@"images"] objectAtIndex:0];
+    }
+//    //NSLog(@"%@", imageDict);
+//    NSDictionary *imaDict = [imageDict objectForKey:@"url"];
+//    NSString *imageURL = [imaDict objectForKey:@"https"];
+//    // NSLog(@"%@", imageURL);
+//    
+    NSString *imgUrl = [imageDict valueForKeyPath:@"url.https"];
+    NSLog(@"%@", imgUrl);
+    
+    if (title && price) {
+        if (imgUrl) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                NSURL *url = [NSURL URLWithString:imgUrl];
+                NSData *data = [NSData dataWithContentsOfURL : url];
+                UIImage *image = [UIImage imageWithData: data];
+                if (image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        cell.imageView.image = image;
+                        cell.nameLabel.text = title;
+                        cell.priceLabel.text = price;
+                    });
+                }
+            });
+        }
+        
+    }
+    
+    return cell;
+ 
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return CGSizeMake(self.view.frame.size.width / 2 - 5, 300);
+    
+}
+
+
+
 
 @end
