@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MFSideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Moltin.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>156CDE5EDA0B49B37C37DB7B709E7BBA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8EDB67440061486820E5A2F5F5C42FE9</key>
+		<key>033B34728B7EF88028D0D56032EE656A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>EBE3A5624E77760733AA85AEBCBF617A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EC96E831D4B2A5446F2FF8CCDC3FB21B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDD5965380CC10E1AB9940B9A8D28BB3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

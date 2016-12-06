@@ -8,6 +8,7 @@ target 'DCStore' do
   # Pods for DCStore
  pod 'Moltin', :git => 'https://github.com/moltin/ios-sdk.git', :branch => 'master'
  pod 'SDWebImage', '~>3.8'
+ pod 'MFSideMenu', :git => 'https://github.com/iamelimars/MFSideMenu.git'
   target 'DCStoreTests' do
     inherit! :search_paths
     # Pods for testing

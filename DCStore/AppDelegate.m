@@ -14,10 +14,36 @@
 
 @implementation AppDelegate
 
+- (CategoriesViewController *)categoriesController {
+    return [[CategoriesViewController alloc] init];
+}
+
+- (UINavigationController *)navigationController {
+    return [[UINavigationController alloc] initWithRootViewController:[self categoriesController]];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    
     [[Moltin sharedInstance] setPublicId:@"vjA7hGXCc7GAgvIpaYUdAzv7VYMp5HZiJkCOwwlX6K"];
+    
+//    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    CartViewController *rightMenuViewController = [[CartViewController alloc] initWithNibName:@"CartViewController" bundle:nil];
+//    
+//    MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController containerWithCenterViewController:[self navigationController] leftMenuViewController:nil rightMenuViewController:rightMenuViewController];
+//
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    CategoriesViewController *catController = [[CategoriesViewController alloc] initWithCollectionViewLayout:layout];
+    NavigationController *navController = [[NavigationController alloc] initWithRootViewController:catController];
+    
+    CartViewController *rightMenuViewController = [[CartViewController alloc] initWithNibName:@"CartViewController" bundle:nil];
+    
+    MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController containerWithCenterViewController:navController leftMenuViewController:nil rightMenuViewController:rightMenuViewController];
+    
+    
+    self.window.rootViewController = container;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

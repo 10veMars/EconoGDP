@@ -11,6 +11,7 @@
 #import <Moltin/Moltin.h>
 #import "CategoryModel.h"
 #import "ProductsListViewController.h"
+#import "MFSideMenu.h"
 
 
 @interface CategoriesViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>

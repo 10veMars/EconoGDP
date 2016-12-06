@@ -11,7 +11,6 @@
 @interface CategoriesViewController ()
 
 
-
 @end
 
 @implementation CategoriesViewController
@@ -23,6 +22,9 @@ static NSString * const reuseIdentifier = @"Cell";
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     self.title = @"Categories";
+    
+    self.navigationItem.rightBarButtonItem = [self rightMenuBarButtonItem];
+    [self.menuContainerViewController.shadow setEnabled:NO];
     
     self.collectionView.backgroundColor = [UIColor colorWithRed:22/255.0
                                                           green:160/255.0
@@ -51,7 +53,20 @@ static NSString * const reuseIdentifier = @"Cell";
         }
     }];
     
+
     
+
+
+}
+
+- (UIBarButtonItem *)rightMenuBarButtonItem {
+    return [[UIBarButtonItem alloc] initWithTitle:@"Cart" style:UIBarButtonItemStylePlain target:self action:@selector(rightSideMenuButtonPressed:)];
+}
+
+- (void)rightSideMenuButtonPressed:(id)sender {
+    [self.menuContainerViewController toggleRightSideMenuCompletion:^{
+        //[self setupMenuBarButtonItems];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

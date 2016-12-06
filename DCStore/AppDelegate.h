@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import <Moltin/Moltin.h>
+#import "MFSideMenu.h"
+#import "CategoriesViewController.h"
+#import "CartViewController.h"
+#import "NavigationController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
