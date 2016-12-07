@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CartTableViewCell.h"
+#import "UIColor+Hex.h"
 
 @interface CartViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIButton *addToCartButton;
 
 @end

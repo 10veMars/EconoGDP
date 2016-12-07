@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController">
             <connections>
+                <outlet property="addToCartButton" destination="b6v-f2-u61" id="GIb-0A-5rK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,8 +19,25 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6v-f2-u61">
+                    <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="lSk-Ds-7L1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                    <state key="normal" title="Add To Cart">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="0.94509803920000002" green="0.55294117649999996" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-            <point key="canvasLocation" x="-36" y="-18"/>
+            <constraints>
+                <constraint firstItem="b6v-f2-u61" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="78S-4D-lGf"/>
+                <constraint firstAttribute="bottom" secondItem="b6v-f2-u61" secondAttribute="bottom" id="QD4-0D-uve"/>
+                <constraint firstAttribute="trailing" secondItem="b6v-f2-u61" secondAttribute="trailing" id="SlG-2d-qXX"/>
+            </constraints>
+            <point key="canvasLocation" x="-36.5" y="-18.5"/>
         </view>
     </objects>
 </document>
