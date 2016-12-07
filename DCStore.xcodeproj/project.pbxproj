@@ -28,6 +28,7 @@
 		90B02B2B1DF675C50066EA3E /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90B02B291DF675C50066EA3E /* CollectionViewCell.xib */; };
 		90B02B2F1DF67B9F0066EA3E /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B02B2E1DF67B9F0066EA3E /* CategoryModel.m */; };
 		90B02B331DF69AC70066EA3E /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B02B321DF69AC70066EA3E /* ProductsListViewController.m */; };
+		90F675C61DF7BC1400FE5F61 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F675C51DF7BC1400FE5F61 /* UIColor+Hex.m */; };
 		B0D0A86699C72E0139639490 /* libPods-DCStoreUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B66288EF2C2E8FF679EE9A98 /* libPods-DCStoreUITests.a */; };
 		E22819D1EB8FDF4CD4A4AC3E /* libPods-DCStoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7A81A639F3CC2C7F19A566 /* libPods-DCStoreTests.a */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,8 @@
 		90B02B2E1DF67B9F0066EA3E /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 		90B02B311DF69AC70066EA3E /* ProductsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsListViewController.h; sourceTree = "<group>"; };
 		90B02B321DF69AC70066EA3E /* ProductsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsListViewController.m; sourceTree = "<group>"; };
+		90F675C41DF7BC1400FE5F61 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		90F675C51DF7BC1400FE5F61 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		9E7A81A639F3CC2C7F19A566 /* libPods-DCStoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DCStoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA955FC1CB84ED967DE66404 /* Pods-DCStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCStoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DCStoreTests/Pods-DCStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B66288EF2C2E8FF679EE9A98 /* libPods-DCStoreUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DCStoreUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +186,7 @@
 				90B02AEE1DF6506A0066EA3E /* AppDelegate.m */,
 				9015DA861DF77B92001CD56C /* NavigationController.h */,
 				9015DA871DF77B92001CD56C /* NavigationController.m */,
+				90F675C31DF7BAC000FE5F61 /* Category/Extensions */,
 				90B02B201DF66D1C0066EA3E /* Categories */,
 				90B02B301DF69A190066EA3E /* Products */,
 				9015DA801DF7778F001CD56C /* Cart */,
@@ -279,6 +283,15 @@
 				9015DA7B1DF728F7001CD56C /* ProductsCell */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		90F675C31DF7BAC000FE5F61 /* Category/Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				90F675C41DF7BC1400FE5F61 /* UIColor+Hex.h */,
+				90F675C51DF7BC1400FE5F61 /* UIColor+Hex.m */,
+			);
+			name = Category/Extensions;
 			sourceTree = "<group>";
 		};
 		9BBBD8126B09713A21455833 /* Frameworks */ = {
@@ -602,6 +615,7 @@
 				9015DA881DF77B92001CD56C /* NavigationController.m in Sources */,
 				9015DA791DF728E9001CD56C /* ProductsCollectionViewCell.m in Sources */,
 				9015DA7F1DF736B1001CD56C /* ProductsModel.m in Sources */,
+				90F675C61DF7BC1400FE5F61 /* UIColor+Hex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

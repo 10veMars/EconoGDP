@@ -16,7 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationBar.barTintColor = [UIColor colorWithHex:@"#6FB98F"];
+    self.navigationBar.titleTextAttributes = @{
+                                               NSForegroundColorAttributeName :[UIColor whiteColor],
+                                               NSFontAttributeName :[UIFont fontWithName:@"Avenir-Book" size:17]
+                                               };
+
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{
+                                            NSForegroundColorAttributeName :[UIColor whiteColor],
+                                            NSFontAttributeName :[UIFont fontWithName:@"Avenir-Book" size:7]
+                                                                     }forState:UIControlStateNormal];
+    
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
+                                                           NSForegroundColorAttributeName :[UIColor whiteColor],
+                                                           NSFontAttributeName :[UIFont fontWithName:@"Avenir-Book" size:17]
+                                                           } forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

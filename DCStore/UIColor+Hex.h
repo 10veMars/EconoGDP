@@ -1,5 +1,5 @@
 //
-//  NavigationController.h
+//  UIColor+Hex.h
 //  DCStore
 //
 //  Created by Eli MArshall on 12/6/16.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIColor+Hex.h"
 
-@interface NavigationController : UINavigationController
+@interface UIColor (Hex)
+
++ (UIColor *)colorWithHex:(NSString *) hex;
 
 @end

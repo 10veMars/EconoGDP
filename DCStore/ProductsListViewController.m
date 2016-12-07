@@ -59,32 +59,12 @@ static NSString * const cellReuseIdentifier = @"cell";
     [self.collectionView registerNib:[UINib nibWithNibName:@"ProductsCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:cellReuseIdentifier];
     [self.view addSubview:self.collectionView];
     
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     
 }
-
-//- (void)loadProductsWithCategoryId:(NSString *)catId {
-//    
-//    [[Moltin sharedInstance].product listingWithParameters:@{@"category" : catId
-//                                                             } success:^(NSDictionary *response) {
-//                                                                 NSArray *products =[response objectForKey:@"result"];
-////                                                                 for (NSDictionary *product in products) {
-////                                                                     NSLog(@"%@", [product objectForKey:@"description"]);
-////                                                                 }
-//                                                                 
-//                                                                 
-//                                                             } failure:^(NSDictionary *response, NSError *error) {
-//                                                                 
-//                                                                 
-//                                                             }];
-//    
-//}
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
@@ -112,11 +92,7 @@ static NSString * const cellReuseIdentifier = @"cell";
         
         imageDict = [[dict objectForKey:@"images"] objectAtIndex:0];
     }
-//    //NSLog(@"%@", imageDict);
-//    NSDictionary *imaDict = [imageDict objectForKey:@"url"];
-//    NSString *imageURL = [imaDict objectForKey:@"https"];
-//    // NSLog(@"%@", imageURL);
-//    
+    
     NSString *imgUrl = [imageDict valueForKeyPath:@"url.https"];
     NSLog(@"%@", imgUrl);
     
