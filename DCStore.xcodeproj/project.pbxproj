@@ -29,6 +29,8 @@
 		90B02B2F1DF67B9F0066EA3E /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B02B2E1DF67B9F0066EA3E /* CategoryModel.m */; };
 		90B02B331DF69AC70066EA3E /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B02B321DF69AC70066EA3E /* ProductsListViewController.m */; };
 		90F675C61DF7BC1400FE5F61 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F675C51DF7BC1400FE5F61 /* UIColor+Hex.m */; };
+		90F675CA1DF7C71900FE5F61 /* CartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F675C81DF7C71900FE5F61 /* CartTableViewCell.m */; };
+		90F675CB1DF7C71900FE5F61 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90F675C91DF7C71900FE5F61 /* CartTableViewCell.xib */; };
 		B0D0A86699C72E0139639490 /* libPods-DCStoreUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B66288EF2C2E8FF679EE9A98 /* libPods-DCStoreUITests.a */; };
 		E22819D1EB8FDF4CD4A4AC3E /* libPods-DCStoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7A81A639F3CC2C7F19A566 /* libPods-DCStoreTests.a */; };
 /* End PBXBuildFile section */
@@ -93,6 +95,9 @@
 		90B02B321DF69AC70066EA3E /* ProductsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsListViewController.m; sourceTree = "<group>"; };
 		90F675C41DF7BC1400FE5F61 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		90F675C51DF7BC1400FE5F61 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		90F675C71DF7C71900FE5F61 /* CartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartTableViewCell.h; sourceTree = "<group>"; };
+		90F675C81DF7C71900FE5F61 /* CartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartTableViewCell.m; sourceTree = "<group>"; };
+		90F675C91DF7C71900FE5F61 /* CartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		9E7A81A639F3CC2C7F19A566 /* libPods-DCStoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DCStoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA955FC1CB84ED967DE66404 /* Pods-DCStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCStoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DCStoreTests/Pods-DCStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B66288EF2C2E8FF679EE9A98 /* libPods-DCStoreUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DCStoreUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +158,9 @@
 				9015DA811DF77844001CD56C /* CartViewController.h */,
 				9015DA821DF77844001CD56C /* CartViewController.m */,
 				9015DA831DF77844001CD56C /* CartViewController.xib */,
+				90F675C71DF7C71900FE5F61 /* CartTableViewCell.h */,
+				90F675C81DF7C71900FE5F61 /* CartTableViewCell.m */,
+				90F675C91DF7C71900FE5F61 /* CartTableViewCell.xib */,
 			);
 			name = Cart;
 			sourceTree = "<group>";
@@ -437,6 +445,7 @@
 			files = (
 				90B02AFD1DF6506A0066EA3E /* LaunchScreen.storyboard in Resources */,
 				90B02AFA1DF6506A0066EA3E /* Assets.xcassets in Resources */,
+				90F675CB1DF7C71900FE5F61 /* CartTableViewCell.xib in Resources */,
 				9015DA7A1DF728E9001CD56C /* ProductsCollectionViewCell.xib in Resources */,
 				90B02B2B1DF675C50066EA3E /* CollectionViewCell.xib in Resources */,
 				9015DA851DF77844001CD56C /* CartViewController.xib in Resources */,
@@ -614,6 +623,7 @@
 				90B02AEC1DF6506A0066EA3E /* main.m in Sources */,
 				9015DA881DF77B92001CD56C /* NavigationController.m in Sources */,
 				9015DA791DF728E9001CD56C /* ProductsCollectionViewCell.m in Sources */,
+				90F675CA1DF7C71900FE5F61 /* CartTableViewCell.m in Sources */,
 				9015DA7F1DF736B1001CD56C /* ProductsModel.m in Sources */,
 				90F675C61DF7BC1400FE5F61 /* UIColor+Hex.m in Sources */,
 			);

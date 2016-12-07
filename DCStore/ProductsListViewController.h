@@ -10,6 +10,8 @@
 #import <Moltin/Moltin.h>
 #import "ProductsCollectionViewCell.h"
 #import "ProductsModel.h"
+#import "MFSideMenu.h"
+
 
 @interface ProductsListViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 

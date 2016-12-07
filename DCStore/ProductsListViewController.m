@@ -31,11 +31,8 @@ static NSString * const cellReuseIdentifier = @"cell";
                 
                 weakSelf.propArray = parsedData;
                 [self.collectionView reloadData];
-                //NSDictionary *dict = [weakSelf.propArray objectAtIndex:0];
-                //self.title = [dict valueForKeyPath:@"category.value"];
                 
             }
-            
         }];
     }
     
@@ -50,6 +47,8 @@ static NSString * const cellReuseIdentifier = @"cell";
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.navigationItem.rightBarButtonItem = [self rightMenuBarButtonItem];
+    [self.menuContainerViewController.shadow setEnabled:NO];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:flowLayout];
@@ -65,6 +64,18 @@ static NSString * const cellReuseIdentifier = @"cell";
     [super viewDidAppear:YES];
     
 }
+
+- (UIBarButtonItem *)rightMenuBarButtonItem {
+    return [[UIBarButtonItem alloc] initWithTitle:@"Cart" style:UIBarButtonItemStylePlain target:self action:@selector(rightSideMenuButtonPressed:)];
+}
+
+- (void)rightSideMenuButtonPressed:(id)sender {
+    [self.menuContainerViewController toggleRightSideMenuCompletion:^{
+        //[self setupMenuBarButtonItems];
+    }];
+}
+
+
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
