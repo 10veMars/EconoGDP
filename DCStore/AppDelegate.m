@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 
+// 公司不让我接触
+// 职能用终端命令
+
+
+
 @interface AppDelegate ()
 
 @end
@@ -20,6 +25,8 @@
 
 - (UINavigationController *)navigationController {
     return [[UINavigationController alloc] initWithRootViewController:[self categoriesController]];
+    
+    
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
